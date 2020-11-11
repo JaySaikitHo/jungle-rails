@@ -1,9 +1,12 @@
+
+<% if enhanced_cart.length != 0 %>
 <section class="cart-show">
 
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
 
+  
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -48,5 +51,8 @@
       <% end %>
     </div>
   </div>
-
+     <% else %>
+  <p> You have nothing in your cart </p>
+  <%= link_to 'products', :root %>
+  <% end %>
 </section>
