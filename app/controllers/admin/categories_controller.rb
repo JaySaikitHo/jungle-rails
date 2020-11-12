@@ -1,5 +1,6 @@
 
 class Admin::CategoriesController < ApplicationController
+  
   #actions are methods on the class
   def index
     @categories = Category.all
