@@ -1,6 +1,8 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example. This was a good chance to practice the MVC model and use Active Records with has_secure_password. The original project was a skeleton and we added user login/registration, category listings, an admin dashboard and basic admin authentication. There were also a currency display bug for us to fix and UI improvements such as order details and adding a sold out icon.
+
+ We had a chance to try out the Stripe API to simulate purchases. We used Rspec for model testing. We also implemented unit testing and feature testing with capybara and phantomjs for a headless web driver.
 
 
 ## Setup
