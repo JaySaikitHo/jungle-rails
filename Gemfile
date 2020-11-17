@@ -45,9 +45,9 @@ group :development, :test do
   gem 'byebug'
   gem 'quiet_assets'
   gem 'dotenv-rails'
-  gem 'capybara'
-  gem 'poltergeist'
-  gem 'database_cleaner'
+  gem 'capybara' #feature test library
+  gem 'poltergeist' # gem to connect phantomjs (web driver)
+  gem 'database_cleaner' # allows us to return the db to a clean slate
 end
 
 group :development do
