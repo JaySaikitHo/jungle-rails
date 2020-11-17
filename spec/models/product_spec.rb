@@ -8,9 +8,11 @@ RSpec.describe Product, type: :model do
       @product.name = 'Crap'
       @product.price = 10
       @product.quantity = 3
-      @product.category_id = 1
-
-      expect(@product).to be_present
+      @category = Category.new name: 'Furniture'
+      @product.category = @category 
+      @product.save
+      
+      expect(@product).to be_valid
     end
 
     it 'should have an error for the name' do
@@ -18,8 +20,8 @@ RSpec.describe Product, type: :model do
       @product.name = nil
       @product.price = 10
       @product.quantity = 3
-      @product.category_id = 1
-
+      @category = Category.new name: 'Furniture'
+      @product.category = @category 
       @product.save
       
       expect(@product.errors.full_messages).to include("Name can't be blank")
@@ -31,8 +33,8 @@ RSpec.describe Product, type: :model do
       @product.name = 'Stuff'
       @product.price = nil
       @product.quantity = 3
-      @product.category_id = 1
-
+      @category = Category.new name: 'Furniture'
+      @product.category = @category 
       @product.save
       
       expect(@product.errors.full_messages).to include("Price can't be blank")
@@ -44,7 +46,8 @@ RSpec.describe Product, type: :model do
       @product.name = 'Stuff'
       @product.price = 10
       @product.quantity = nil
-      @product.category_id = 1
+      @category = Category.new name: 'Furniture'
+      @product.category = @category 
 
       @product.save
       
@@ -57,7 +60,7 @@ RSpec.describe Product, type: :model do
       @product.name = 'Stuff'
       @product.price = 10
       @product.quantity = 3
-      @product.category_id = nil
+      @product.category_id = nil 
 
       @product.save
       
@@ -66,6 +69,7 @@ RSpec.describe Product, type: :model do
     end
   
   end
+  
   
     
   
